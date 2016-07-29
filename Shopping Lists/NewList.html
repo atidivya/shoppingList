@@ -1,0 +1,8 @@
+<template name="NewList">
+<div class ="new-list-container">
+<i class="fa fa-close"></i>
+{{#quickForm collection="Lists" id="insertNewList" type="insert" class="new-list-form"}}
+{{> afQuickField name="shoppingDate" type="bootstrap-datepicker"}}
+{{/quickForm}}
+</div>
+</template>

@@ -1,0 +1,24 @@
+<template name="SingleList">
+
+	<h1>{{list.name}}</h1>
+	<p><b>Date of Creation:</b> {{list.createdAt}}</p>
+	<p><b>Date of Shopping:</b> {{list.shoppingDate}}</p>
+	<p>
+	<table class="table" style ="width:100%">
+				<tr>
+					<th>Name of the Item</th>
+					<th>Quantity</th>
+					<th>Desired Store</th>
+					<th>Expected Price</th>
+				</tr>
+		{{#each shoppinglists}}
+				<tr>
+					<td>{{name}}</td>
+					<td>{{amount}}</td>
+					<td>{{desiredStore}}</td>
+					<td>{{expectedPrice}}</td>
+				</tr>
+		{{/each}}
+	</table>
+	</p>
+</template>

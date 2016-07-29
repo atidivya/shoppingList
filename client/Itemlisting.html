@@ -1,0 +1,36 @@
+<template name="Itemlisting">
+	<h1 class="page-title"><u>My Item List</u></h1>
+		{{#each lists}}
+			{{> ItemList}}
+		{{else}}
+			<div class="item-list">
+			<h1>Please <a href="/shopping-list">add</a> item(s) to your list</h1>
+			</div>
+		{{/each}}
+
+</template>
+
+<template name="ItemList">
+	<div class="item-list">
+			<h3><b>{{name}}</b></h3>
+			<p><b>Date of Shopping:</b> {{shoppingDate}}</p>
+			<p>
+				<table class="table" style ="width:100%">
+					<tr>
+						<th>Name of the Item</th>
+						<th>Quantity</th>
+						<th>Desired Store</th>
+						<th>Expected Price</th>
+					</tr>
+						{{#each shoppinglists}}
+					<tr>
+						<td>{{name}}</td>
+						<td>{{amount}}</td>
+						<td>{{desiredStore}}</td>
+						<td>{{expectedPrice}}</td>
+					</tr>
+						{{/each}}
+				</table>
+			</p>
+	</div>	
+</template>

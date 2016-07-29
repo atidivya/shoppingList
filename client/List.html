@@ -1,0 +1,37 @@
+<template name="List">
+	<article class="list {{#if needToPurchase}}in-list{{/if}}">
+		<h3>{{name}}</h3>
+			{{#if editMode}}
+				{{> quickForm collection="Lists" id=updateListId type="update" doc=this autosave=true}}
+			{{else}}
+				<p><b>Date of Creation:</b> {{createdAt}}</p>
+				<p><b>Date of Shopping:</b> {{shoppingDate}}</p>
+				<p>
+				<table class="table" style ="width:100%">
+							<tr>
+								<th>Name of the Item</th>
+								<th>Quantity</th>
+								<th>Desired Store</th>
+								<th>Expected Price</th>
+							</tr>
+							{{#each shoppinglists}}
+								<tr>
+									<td>{{name}}</td>
+									<td>{{amount}}</td>
+									<td>{{desiredStore}}</td>
+									<td>{{expectedPrice}}</td>
+								</tr>
+							{{/each}}
+				</table>
+				</p>
+			<a href="/list/{{_id}}">List Details</a>
+				{{#if needToPurchase}}
+					<button class="btn-deny toggle-list">Remove from List</button>
+				{{else}}
+					<button class="btn-primary toggle-list">Add to List</button>
+				{{/if}}
+			{{/if}}
+	<i class="fa fa-pencil"></i>
+	<i class="fa fa-trash"></i>
+	</article>
+</template>

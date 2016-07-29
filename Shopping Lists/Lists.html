@@ -1,0 +1,16 @@
+<template name="Lists">
+{{#if $.Session.get 'newList'}}
+{{> NewList}}
+{{else}}
+<button class="new-list">New List</button>
+{{/if}}
+<section class="lists">
+{{#if Template.subscriptionsReady}}
+	{{#each lists}}
+			{{> List}}
+	{{/each}}
+	{{else}}
+	<p><b> LOADING THE LIST....</b></p>
+{{/if}}
+</section>
+</template>

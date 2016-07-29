@@ -1,0 +1,19 @@
+<template name="ShoppingCart">
+	<h1 class="page-title"><u>My Shopping Cart</u></h1>
+	<ul class="shopping-cart">
+	{{#each shoppingCart}}
+		{{#each shoppinglists}}
+		
+		
+			<li class="{{#if checked}}checked{{/if}}">
+			<input type="checkbox" checked="{{checked}}" class="toggle-checked">
+			{{name}} - <span class="amount">Quantity :{{amount}}</span>
+			</li>
+			
+		
+		{{/each}}
+	{{else}}
+		<h1>Please <a href="/shopping-list">add</a> item(s) to your cart</h1>
+	{{/each}}
+	</ul>
+</template>
